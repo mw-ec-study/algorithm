@@ -1,4 +1,5 @@
-'''숫자 카드 게임'''
+'''숫자 카드 게임 p96'''
+
 def solution(cards):
     answer = -1
     for row in cards:

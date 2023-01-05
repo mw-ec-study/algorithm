@@ -1,4 +1,4 @@
-'''1이 될 때까지'''
+'''1이 될 때까지 p99'''
 
 def solution(num, k):
     answer = 0

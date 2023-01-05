@@ -1,4 +1,4 @@
-# 큰 수의 법칙
+'''큰 수의 법칙 p92'''
 
 def solution(nums:list, k:int, m:int):
     nums.sort()

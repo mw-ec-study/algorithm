@@ -1,4 +1,2 @@
 # algorithm
 algorithm study
-
-hello
