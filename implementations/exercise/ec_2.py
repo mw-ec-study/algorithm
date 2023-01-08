@@ -10,12 +10,15 @@ def solution(current, map, n, m):
         if direc == 4: direc = 0
         directions = get_direction(direc)
         
+        next_a = a + directions[0]
+        next_b = b + directions[1]
+        
         if rotation_count == 4:
             # 이미 전부 4 방향을 본 상황
             rotation_count = 0
             
-            next_a = a + directions[0] * -1
-            next_b = b + directions[1] * -1
+            next_a = a + (directions[0] * -1)
+            next_b = b + (directions[1] * -1)
             
             # 4 뱡향을 모두 보고 뒤로 갔을 때
             if next_a < 0 or next_a > n or next_b < 0 or next_b > m:
@@ -31,23 +34,22 @@ def solution(current, map, n, m):
                 b = next_b
                 answer += 1
         
-        elif 0 > (a + directions[0]) or (a + directions[0]) >= n \
-            or 0 > (b + directions[1]) or (b + directions[1]) >= m:
+        elif 0 > next_a or next_a >= n or 0 > next_b or next_b >= m:
                 # 벽인 경우 회전 횟수 + 1, 다음 방향
                 rotation_count += 1
                 direc += 1
                 
-        elif map[a + directions[0]][ b + directions[1]] != 0:
+        elif map[next_a][next_b] != 0:
             # 바다나 이미 지나왔던 경로라면 회전 횟수 + 1, 다음 방향
             rotation_count += 1
             direc += 1
             
-        elif map[a + directions[0]][b + directions[1]] == 0:
+        elif map[next_a][next_b] == 0:
             # 지나갈 수 있는 방향
             rotation_count = 0
             map[a][b] = 2 # 마킹
-            a += directions[0]
-            b += directions[1]
+            a = next_a
+            b = next_b
             answer += 1
             
     print(answer)
