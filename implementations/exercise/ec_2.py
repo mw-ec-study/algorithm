@@ -1,3 +1,4 @@
+'''p118'''
 def solution(current, map, n, m):
     answer = 1
     
@@ -22,7 +23,7 @@ def solution(current, map, n, m):
             next_b = b + (directions[1] * -1)
             
             # 4 뱡향을 모두 보고 뒤로 갔을 때
-            if next_a < 0 or next_a > n or next_b < 0 or next_b > m:
+            if next_a < 0 or next_a >= n or next_b < 0 or next_b >= m:
                 # 벽일 경우
                 break
             elif map[next_a][next_b] == 1:
@@ -52,14 +53,15 @@ def solution(current, map, n, m):
             answer += 1
             
     print(answer)
+    
+table = {
+    0: (-1, 0), #북
+    1: (0, -1), #서
+    2: (1, 0), # 남
+    3: (0, 1), # 동
+}
         
 def get_direction(direction):
-    table = {
-        0: (-1, 0), #북
-        1: (0, -1), #서
-        2: (1, 0), # 남
-        3: (0, 1), # 동
-    }
     return table[direction]
         
 
