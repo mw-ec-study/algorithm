@@ -1,12 +1,18 @@
 def solution(current, map, n, m):
-    answer = 0
+    answer = 1
     
     direc = current[2]
     a = current[0]
     b = current[1]
+    map[a][b] = 2
     rotation_count = 0
     
     while True:
+        print(map[0])
+        print(map[1])
+        print(map[2])
+        print(map[3])
+        print()
         if direc == 4: direc = 0
         directions = get_direction(direc)
         
@@ -29,15 +35,13 @@ def solution(current, map, n, m):
                 break
             else:
                 # 뒤로 가기
-                map[a][b] = 2
                 a = next_a
                 b = next_b
-                answer += 1
         
         elif 0 > next_a or next_a >= n or 0 > next_b or next_b >= m:
-                # 벽인 경우 회전 횟수 + 1, 다음 방향
-                rotation_count += 1
-                direc += 1
+            # 벽인 경우 회전 횟수 + 1, 다음 방향
+            rotation_count += 1
+            direc += 1
                 
         elif map[next_a][next_b] != 0:
             # 바다나 이미 지나왔던 경로라면 회전 횟수 + 1, 다음 방향
@@ -47,9 +51,9 @@ def solution(current, map, n, m):
         elif map[next_a][next_b] == 0:
             # 지나갈 수 있는 방향
             rotation_count = 0
-            map[a][b] = 2 # 마킹
             a = next_a
             b = next_b
+            map[a][b] = 2 # 마킹
             answer += 1
             
     print(answer)
