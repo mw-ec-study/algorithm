@@ -2,17 +2,17 @@
 n, m = map(int, input().split()) #map size
 character = list(map(int, input().split()))
 
-# _map = [          #테스트 입력 귀찮아서 만듬
-#     [1,1,1,1],
-#     [1,0,0,1],
-#     [1,1,0,1],
-#     [1,1,1,1]
-# ] 
 
 _map = []
+_map = [          #테스트 입력 귀찮아서 만듬
+    [1,1,1,1],
+    [1,0,0,1],
+    [1,1,0,1],
+    [1,1,1,1]
+] 
 
-for i in range(n):
-    _map.append(list(map(int, input().split())))
+# for i in range(n):
+#     _map.append(list(map(int, input().split())))
 
 visit_count = 1
 check_count = 0
@@ -43,7 +43,6 @@ while True:
             #뒤로 이동
             character_x -= moving[0]
             character_y -= moving[1]
-            _map[character_x][character_y] = 1004 #방문처리
 
         check_count = 0
 
