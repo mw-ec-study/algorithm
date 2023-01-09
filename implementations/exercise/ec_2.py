@@ -8,11 +8,6 @@ def solution(current, map, n, m):
     rotation_count = 0
     
     while True:
-        print(map[0])
-        print(map[1])
-        print(map[2])
-        print(map[3])
-        print()
         if direc == 4: direc = 0
         directions = get_direction(direc)
         
@@ -69,10 +64,10 @@ def get_direction(direction):
         
 
 map = [
-    [1,1,1,1],
-    [1,0,0,1],
     [1,1,0,1],
-    [1,1,1,1]
+    [1,0,0,1],
+    [1,0,0,1],
+    [0,1,1,1]
 ]
 
 solution((1,1,0), map, n=4, m=4)
