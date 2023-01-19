@@ -10,7 +10,7 @@ def solution(num, coins:list):
             num -= coins[i] * coin_count
             
             if num == 0:
-                array += [coins[i]]*coin_count
+                array += [coins[i]]*coin_count #[3,3,3,3,3]
                 return len(array)
             if num > 0:
                 array += [coins[i]]*coin_count
@@ -20,11 +20,11 @@ def solution(num, coins:list):
             return -1
         
         last_index += 1 #다음 코인
-        array.pop(-1) #
+        array.pop(-1) 
         
     return -1
         
-print(solution(3534, [5, 4]))
+print(solution(10000, [13, 11, 7, 6, 3, 2]))
 
 # num = 19
 # coins = [5, 4]

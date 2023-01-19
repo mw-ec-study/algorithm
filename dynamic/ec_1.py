@@ -1,6 +1,10 @@
 count = 0 #반복한 횟수
 min_count = 999999999 #최소 개수
 
+'''
+나눠지는 숫자에 있는 계산 횟수+1(2, 3, 5 중에서 나눠짐) vs 전 숫자 횟수+1(그냥 +1)
+'''
+
 def counter(x, count):
     global min_count
     

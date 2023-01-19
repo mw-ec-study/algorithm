@@ -1,7 +1,7 @@
 N, M = map(int, input().split())
 
 moneys = []
-
+# 10000, [13, 11, 7, 6, 3, 2]
 for i in range(N):
     moneys.append(int(input()))
 
