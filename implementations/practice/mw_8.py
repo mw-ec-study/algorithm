@@ -7,14 +7,15 @@ result = []
 
 for i in range(len(input_str)):
     if input_str[i] in number:
-        sum_num += int(input_str[i])
+        sum_num += int(input_str[i]) #숫자만 따로
     else:
-        result.append(input_str[i])
+        result.append(input_str[i]) #알파벳만 따로 
 
 result.sort()
 
 if sum_num != 0:
     result.append(str(sum_num))
+
 print(''.join(result))
 
 
